@@ -1,0 +1,21 @@
+TITLE: Change Management Policy
+
+SECTION: Change Request
+Any modification to project scope, requirements, or timeline must be submitted as a Change Request.
+The request must include a description of the change and justification.
+
+SECTION: Impact Analysis
+The project manager and technical team evaluate the impact of the change.
+Impact analysis includes:
+- Schedule impact
+- Cost impact
+- Resource impact
+- Technical risks
+
+SECTION: Approval Process
+After analysis, the change request must be approved by the project manager or change control board (CCB).
+Only approved changes may be implemented.
+
+SECTION: Scope Creep Prevention
+Unauthorized changes should not be implemented.
+All changes must follow the formal change management process.

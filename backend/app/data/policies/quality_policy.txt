@@ -1,0 +1,21 @@
+TITLE: Software Quality Policy
+
+SECTION: Code Review
+All source code must undergo peer review before merging into the main branch.
+Code review ensures code quality, readability, and adherence to coding standards.
+
+SECTION: Testing
+Testing must include:
+- Unit testing
+- Integration testing
+- System testing
+
+Test cases should be documented and automated where possible.
+
+SECTION: Continuous Integration
+Projects should use Continuous Integration (CI) pipelines.
+CI pipelines automatically run tests and checks whenever new code is pushed.
+
+SECTION: Documentation
+Technical documentation must be maintained and updated regularly.
+Documentation includes architecture diagrams, API specifications, and user guides.

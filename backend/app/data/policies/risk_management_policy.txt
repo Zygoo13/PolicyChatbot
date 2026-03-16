@@ -1,0 +1,20 @@
+TITLE: Risk Management Policy
+
+SECTION: Risk Identification
+Project teams must identify potential risks at the beginning of the project.
+Risks may include technical risks, schedule risks, or resource risks.
+
+SECTION: Risk Assessment
+Each risk should be evaluated based on:
+- Probability of occurrence
+- Potential impact on the project
+
+Risks should be categorized as low, medium, or high.
+
+SECTION: Risk Mitigation
+For each high or medium risk, mitigation strategies must be defined.
+Mitigation may include additional testing, resource allocation, or schedule adjustments.
+
+SECTION: Risk Monitoring
+Risks must be reviewed periodically during project meetings.
+New risks should be added to the risk register when identified.
