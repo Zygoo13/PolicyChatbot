@@ -1,21 +1,87 @@
-TITLE: Software Quality Policy
+TITLE: Quality Assurance Policy
 
 SECTION: Code Review
-All source code must undergo peer review before merging into the main branch.
-Code review ensures code quality, readability, and adherence to coding standards.
+Code Review đảm bảo chất lượng code thông qua việc review.
+Các bước thực hiện:
+1. Tạo pull request.
+2. Reviewer kiểm tra code.
+3. Approve trước khi merge.
+Vai trò: Developers.
+Ghi chú: Mọi code phải được review.
 
-SECTION: Testing
-Testing must include:
-- Unit testing
-- Integration testing
-- System testing
+SECTION: Unit Testing
+Unit Testing quy định viết unit test cho các module.
+Các bước thực hiện:
+1. Viết test case.
+2. Chạy unit test.
+3. Đảm bảo coverage tối thiểu.
+Vai trò: Developers.
+Ghi chú: Coverage nên trên 70%.
 
-Test cases should be documented and automated where possible.
+SECTION: Integration Testing
+Integration Testing kiểm thử sự tương tác giữa các module.
+Các bước thực hiện:
+1. Xác định các module liên quan.
+2. Chạy integration test.
+3. Xác nhận dữ liệu truyền đúng.
+Vai trò: QA.
+Ghi chú: Quan trọng với hệ thống lớn.
 
-SECTION: Continuous Integration
-Projects should use Continuous Integration (CI) pipelines.
-CI pipelines automatically run tests and checks whenever new code is pushed.
+SECTION: Regression Testing
+Regression Testing đảm bảo thay đổi không phá vỡ chức năng cũ.
+Các bước thực hiện:
+1. Chạy regression test suite.
+2. Xác nhận các chức năng cũ hoạt động.
+Vai trò: QA.
+Ghi chú: Thực hiện trước mỗi release.
 
-SECTION: Documentation
-Technical documentation must be maintained and updated regularly.
-Documentation includes architecture diagrams, API specifications, and user guides.
+SECTION: Bug Tracking
+Bug Tracking quy định quản lý lỗi phần mềm.
+Các bước thực hiện:
+1. Ghi nhận bug trong hệ thống.
+2. Phân loại mức độ lỗi.
+3. Giao cho developer sửa.
+Vai trò: QA, Developers.
+Ghi chú: Sử dụng Jira hoặc hệ thống tương tự.
+
+SECTION: QA Release Approval
+QA Release Approval quy định QA phải xác nhận trước khi phát hành.
+Các bước thực hiện:
+1. Kiểm tra build.
+2. Chạy test.
+3. Phê duyệt release.
+Vai trò: QA.
+Ghi chú: Không release khi QA chưa approve.
+
+SECTION: Performance Testing
+Performance Testing đảm bảo hệ thống chịu tải tốt.
+Các bước thực hiện:
+1. Thiết lập kịch bản load test.
+2. Chạy test.
+3. Phân tích kết quả.
+Vai trò: QA, DevOps.
+Ghi chú: Quan trọng với hệ thống lớn.
+
+SECTION: Security Testing
+Security Testing kiểm tra lỗ hổng bảo mật.
+Các bước thực hiện:
+1. Thực hiện scan bảo mật.
+2. Thực hiện penetration test.
+Vai trò: Security Team, QA.
+Ghi chú: Bắt buộc với hệ thống production.
+
+SECTION: Test Documentation
+Test Documentation quy định việc viết tài liệu test.
+Các bước thực hiện:
+1. Viết test case.
+2. Lưu test results.
+Vai trò: QA.
+Ghi chú: Phục vụ audit.
+
+SECTION: Quality Metrics
+Quality Metrics quy định theo dõi các chỉ số chất lượng.
+Các bước thực hiện:
+1. Theo dõi defect rate.
+2. Theo dõi test coverage.
+Vai trò: QA, Project Manager.
+Ghi chú: Dùng để cải tiến quy trình.

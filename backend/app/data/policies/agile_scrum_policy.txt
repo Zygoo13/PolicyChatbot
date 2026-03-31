@@ -1,26 +1,101 @@
 TITLE: Agile / Scrum Policy
 
 SECTION: Sprint Planning
-Sprint Planning is conducted at the beginning of each sprint.
-The development team selects backlog items based on priority and team capacity.
-The output of Sprint Planning is a Sprint Backlog.
+Sprint Planning là cuộc họp được tổ chức vào đầu mỗi sprint để xác định công việc sẽ thực hiện.
+Các bước thực hiện:
+1. Product Owner chuẩn bị Product Backlog.
+2. Nhóm phát triển xem xét các user story.
+3. Thảo luận phạm vi công việc của sprint.
+4. Ước lượng độ phức tạp của từng task.
+5. Tạo Sprint Backlog.
+6. Xác định mục tiêu Sprint.
+Vai trò: Product Owner, Scrum Master, Developers.
+Ghi chú: Cuộc họp thường kéo dài 2–4 giờ đối với sprint 2 tuần.
 
-SECTION: Daily Scrum
-Daily Scrum is a short meeting held every working day.
-The meeting should be time-boxed to 15 minutes.
-Each team member answers three questions:
-1. What did I complete yesterday?
-2. What will I work on today?
-3. What obstacles are blocking my progress?
+SECTION: Daily Standup
+Daily Standup là cuộc họp ngắn hằng ngày để cập nhật tiến độ công việc trong sprint.
+Các bước thực hiện:
+1. Nhóm phát triển tập trung vào cùng một thời điểm mỗi ngày.
+2. Mỗi thành viên báo cáo công việc hôm qua.
+3. Mỗi thành viên nêu kế hoạch hôm nay.
+4. Mỗi thành viên nêu blocker nếu có.
+Vai trò: Scrum Master, Developers.
+Ghi chú: Thời gian họp tối đa 15 phút.
 
 SECTION: Sprint Review
-Sprint Review is conducted at the end of each sprint.
-The team demonstrates completed features to stakeholders.
-Stakeholders provide feedback which may lead to backlog updates.
+Sprint Review là cuộc họp đánh giá các chức năng đã hoàn thành trong sprint.
+Các bước thực hiện:
+1. Nhóm phát triển demo các chức năng đã hoàn thành.
+2. Product Owner kiểm tra kết quả.
+3. Stakeholders đưa ra phản hồi.
+4. Cập nhật Product Backlog nếu cần.
+Vai trò: Product Owner, Developers, Stakeholders.
+Ghi chú: Diễn ra vào cuối mỗi sprint.
+
+SECTION: Sprint Retrospective
+Sprint Retrospective là hoạt động đánh giá quy trình làm việc để cải thiện hiệu suất nhóm.
+Các bước thực hiện:
+1. Đánh giá những gì đã làm tốt.
+2. Xác định các vấn đề gặp phải.
+3. Đề xuất cải tiến.
+4. Chọn các hành động cải tiến cho sprint tiếp theo.
+Vai trò: Scrum Master, Developers.
+Ghi chú: Tập trung vào cải tiến liên tục.
+
+SECTION: Product Backlog Management
+Product Backlog Management quy định cách quản lý và ưu tiên các backlog item.
+Các bước thực hiện:
+1. Product Owner cập nhật backlog.
+2. Mô tả rõ ràng các user story.
+3. Ưu tiên các công việc theo giá trị kinh doanh.
+4. Thực hiện backlog refinement định kỳ.
+Vai trò: Product Owner.
+Ghi chú: Backlog cần được cập nhật thường xuyên.
+
+SECTION: User Story Estimation
+User Story Estimation quy định cách ước lượng độ phức tạp của user story.
+Các bước thực hiện:
+1. Nhóm đọc user story.
+2. Thảo luận phạm vi chức năng.
+3. Sử dụng Planning Poker để ước lượng.
+4. Gán story point cho từng user story.
+Vai trò: Developers.
+Ghi chú: Giúp lập kế hoạch sprint chính xác hơn.
 
 SECTION: Definition of Done
-A backlog item is considered done when:
-- Code is implemented
-- Code review is completed
-- Unit tests pass
-- Documentation is updated
+Definition of Done xác định tiêu chí để một công việc được coi là hoàn thành.
+Các bước thực hiện:
+1. Code được commit vào repository.
+2. Unit test chạy thành công.
+3. Code được review.
+4. QA test thành công.
+5. Tài liệu liên quan được cập nhật.
+Vai trò: Developers, QA.
+Ghi chú: Áp dụng cho tất cả các task trong sprint.
+
+SECTION: Sprint Backlog Update
+Sprint Backlog Update quy định cách cập nhật trạng thái công việc trong sprint.
+Các bước thực hiện:
+1. Cập nhật trạng thái task trong hệ thống quản lý.
+2. Ghi nhận thời gian còn lại của task.
+3. Cập nhật biểu đồ burndown.
+Vai trò: Developers, Scrum Master.
+Ghi chú: Cập nhật mỗi ngày.
+
+SECTION: Agile Communication
+Agile Communication quy định các kênh giao tiếp trong nhóm Agile.
+Các bước thực hiện:
+1. Sử dụng công cụ giao tiếp chung như Slack hoặc Teams.
+2. Thông báo ngay khi gặp blocker.
+3. Ghi lại nội dung cuộc họp.
+Vai trò: Scrum Master, Developers.
+Ghi chú: Giúp đảm bảo thông tin minh bạch.
+
+SECTION: Agile Documentation
+Agile Documentation quy định việc lưu trữ và cập nhật tài liệu trong dự án Agile.
+Các bước thực hiện:
+1. Tài liệu thiết kế phải được lưu trữ.
+2. Cập nhật wiki dự án.
+3. Review tài liệu định kỳ.
+Vai trò: Developers, Project Manager.
+Ghi chú: Tài liệu phải luôn được cập nhật.

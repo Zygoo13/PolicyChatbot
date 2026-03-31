@@ -4,127 +4,319 @@
     "file_name": "agile_scrum_policy.txt",
     "title": "Agile / Scrum Policy",
     "section": "Sprint Planning",
-    "content": "Sprint Planning is conducted at the beginning of each sprint. The development team selects backlog items based on priority and team capacity. The output of Sprint Planning is a Sprint Backlog.",
-    "content_preview": "Sprint Planning is conducted at the beginning of each sprint. The development team selects backlog items based on priority and team capacity. The output of Sprint Planning is a Sprint Backlog."
+    "content": "Sprint Planning là cuộc họp được tổ chức vào đầu mỗi sprint để xác định công việc sẽ thực hiện. Các bước thực hiện: 1. Product Owner chuẩn bị Product Backlog. 2. Nhóm phát triển xem xét các user story. 3. Thảo luận phạm vi công việc của sprint. 4. Ước lượng độ phức tạp của từng task. 5. Tạo Sprint Backlog. 6. Xác định mục tiêu Sprint. Vai trò: Product Owner, Scrum Master, Developers. Ghi chú: Cuộc họp thường kéo dài 2–4 giờ đối với sprint 2 tuần.",
+    "content_preview": "Sprint Planning là cuộc họp được tổ chức vào đầu mỗi sprint để xác định công việc sẽ thực hiện. Các bước thực hiện: 1. Product Owner chuẩn bị Product Backlog. 2. Nhóm phát triển xem xét các user story"
   },
   {
     "chunk_id": "agile_scrum_policy.txt::chunk_1",
     "file_name": "agile_scrum_policy.txt",
     "title": "Agile / Scrum Policy",
-    "section": "Daily Scrum",
-    "content": "Daily Scrum is a short meeting held every working day. The meeting should be time-boxed to 15 minutes. Each team member answers three questions: 1. What did I complete yesterday? 2. What will I work on today? 3. What obstacles are blocking my progress?",
-    "content_preview": "Daily Scrum is a short meeting held every working day. The meeting should be time-boxed to 15 minutes. Each team member answers three questions: 1. What did I complete yesterday? 2. What will I work o"
+    "section": "Daily Standup",
+    "content": "Daily Standup là cuộc họp ngắn hằng ngày để cập nhật tiến độ công việc trong sprint. Các bước thực hiện: 1. Nhóm phát triển tập trung vào cùng một thời điểm mỗi ngày. 2. Mỗi thành viên báo cáo công việc hôm qua. 3. Mỗi thành viên nêu kế hoạch hôm nay. 4. Mỗi thành viên nêu blocker nếu có. Vai trò: Scrum Master, Developers. Ghi chú: Thời gian họp tối đa 15 phút.",
+    "content_preview": "Daily Standup là cuộc họp ngắn hằng ngày để cập nhật tiến độ công việc trong sprint. Các bước thực hiện: 1. Nhóm phát triển tập trung vào cùng một thời điểm mỗi ngày. 2. Mỗi thành viên báo cáo công vi"
   },
   {
     "chunk_id": "agile_scrum_policy.txt::chunk_2",
     "file_name": "agile_scrum_policy.txt",
     "title": "Agile / Scrum Policy",
     "section": "Sprint Review",
-    "content": "Sprint Review is conducted at the end of each sprint. The team demonstrates completed features to stakeholders. Stakeholders provide feedback which may lead to backlog updates.",
-    "content_preview": "Sprint Review is conducted at the end of each sprint. The team demonstrates completed features to stakeholders. Stakeholders provide feedback which may lead to backlog updates."
+    "content": "Sprint Review là cuộc họp đánh giá các chức năng đã hoàn thành trong sprint. Các bước thực hiện: 1. Nhóm phát triển demo các chức năng đã hoàn thành. 2. Product Owner kiểm tra kết quả. 3. Stakeholders đưa ra phản hồi. 4. Cập nhật Product Backlog nếu cần. Vai trò: Product Owner, Developers, Stakeholders. Ghi chú: Diễn ra vào cuối mỗi sprint.",
+    "content_preview": "Sprint Review là cuộc họp đánh giá các chức năng đã hoàn thành trong sprint. Các bước thực hiện: 1. Nhóm phát triển demo các chức năng đã hoàn thành. 2. Product Owner kiểm tra kết quả. 3. Stakeholders"
   },
   {
     "chunk_id": "agile_scrum_policy.txt::chunk_3",
     "file_name": "agile_scrum_policy.txt",
     "title": "Agile / Scrum Policy",
+    "section": "Sprint Retrospective",
+    "content": "Sprint Retrospective là hoạt động đánh giá quy trình làm việc để cải thiện hiệu suất nhóm. Các bước thực hiện: 1. Đánh giá những gì đã làm tốt. 2. Xác định các vấn đề gặp phải. 3. Đề xuất cải tiến. 4. Chọn các hành động cải tiến cho sprint tiếp theo. Vai trò: Scrum Master, Developers. Ghi chú: Tập trung vào cải tiến liên tục.",
+    "content_preview": "Sprint Retrospective là hoạt động đánh giá quy trình làm việc để cải thiện hiệu suất nhóm. Các bước thực hiện: 1. Đánh giá những gì đã làm tốt. 2. Xác định các vấn đề gặp phải. 3. Đề xuất cải tiến. 4."
+  },
+  {
+    "chunk_id": "agile_scrum_policy.txt::chunk_4",
+    "file_name": "agile_scrum_policy.txt",
+    "title": "Agile / Scrum Policy",
+    "section": "Product Backlog Management",
+    "content": "Product Backlog Management quy định cách quản lý và ưu tiên các backlog item. Các bước thực hiện: 1. Product Owner cập nhật backlog. 2. Mô tả rõ ràng các user story. 3. Ưu tiên các công việc theo giá trị kinh doanh. 4. Thực hiện backlog refinement định kỳ. Vai trò: Product Owner. Ghi chú: Backlog cần được cập nhật thường xuyên.",
+    "content_preview": "Product Backlog Management quy định cách quản lý và ưu tiên các backlog item. Các bước thực hiện: 1. Product Owner cập nhật backlog. 2. Mô tả rõ ràng các user story. 3. Ưu tiên các công việc theo giá "
+  },
+  {
+    "chunk_id": "agile_scrum_policy.txt::chunk_5",
+    "file_name": "agile_scrum_policy.txt",
+    "title": "Agile / Scrum Policy",
+    "section": "User Story Estimation",
+    "content": "User Story Estimation quy định cách ước lượng độ phức tạp của user story. Các bước thực hiện: 1. Nhóm đọc user story. 2. Thảo luận phạm vi chức năng. 3. Sử dụng Planning Poker để ước lượng. 4. Gán story point cho từng user story. Vai trò: Developers. Ghi chú: Giúp lập kế hoạch sprint chính xác hơn.",
+    "content_preview": "User Story Estimation quy định cách ước lượng độ phức tạp của user story. Các bước thực hiện: 1. Nhóm đọc user story. 2. Thảo luận phạm vi chức năng. 3. Sử dụng Planning Poker để ước lượng. 4. Gán sto"
+  },
+  {
+    "chunk_id": "agile_scrum_policy.txt::chunk_6",
+    "file_name": "agile_scrum_policy.txt",
+    "title": "Agile / Scrum Policy",
     "section": "Definition of Done",
-    "content": "A backlog item is considered done when: - Code is implemented - Code review is completed - Unit tests pass - Documentation is updated",
-    "content_preview": "A backlog item is considered done when: - Code is implemented - Code review is completed - Unit tests pass - Documentation is updated"
+    "content": "Definition of Done xác định tiêu chí để một công việc được coi là hoàn thành. Các bước thực hiện: 1. Code được commit vào repository. 2. Unit test chạy thành công. 3. Code được review. 4. QA test thành công. 5. Tài liệu liên quan được cập nhật. Vai trò: Developers, QA. Ghi chú: Áp dụng cho tất cả các task trong sprint.",
+    "content_preview": "Definition of Done xác định tiêu chí để một công việc được coi là hoàn thành. Các bước thực hiện: 1. Code được commit vào repository. 2. Unit test chạy thành công. 3. Code được review. 4. QA test thàn"
+  },
+  {
+    "chunk_id": "agile_scrum_policy.txt::chunk_7",
+    "file_name": "agile_scrum_policy.txt",
+    "title": "Agile / Scrum Policy",
+    "section": "Sprint Backlog Update",
+    "content": "Sprint Backlog Update quy định cách cập nhật trạng thái công việc trong sprint. Các bước thực hiện: 1. Cập nhật trạng thái task trong hệ thống quản lý. 2. Ghi nhận thời gian còn lại của task. 3. Cập nhật biểu đồ burndown. Vai trò: Developers, Scrum Master. Ghi chú: Cập nhật mỗi ngày.",
+    "content_preview": "Sprint Backlog Update quy định cách cập nhật trạng thái công việc trong sprint. Các bước thực hiện: 1. Cập nhật trạng thái task trong hệ thống quản lý. 2. Ghi nhận thời gian còn lại của task. 3. Cập n"
+  },
+  {
+    "chunk_id": "agile_scrum_policy.txt::chunk_8",
+    "file_name": "agile_scrum_policy.txt",
+    "title": "Agile / Scrum Policy",
+    "section": "Agile Communication",
+    "content": "Agile Communication quy định các kênh giao tiếp trong nhóm Agile. Các bước thực hiện: 1. Sử dụng công cụ giao tiếp chung như Slack hoặc Teams. 2. Thông báo ngay khi gặp blocker. 3. Ghi lại nội dung cuộc họp. Vai trò: Scrum Master, Developers. Ghi chú: Giúp đảm bảo thông tin minh bạch.",
+    "content_preview": "Agile Communication quy định các kênh giao tiếp trong nhóm Agile. Các bước thực hiện: 1. Sử dụng công cụ giao tiếp chung như Slack hoặc Teams. 2. Thông báo ngay khi gặp blocker. 3. Ghi lại nội dung cu"
+  },
+  {
+    "chunk_id": "agile_scrum_policy.txt::chunk_9",
+    "file_name": "agile_scrum_policy.txt",
+    "title": "Agile / Scrum Policy",
+    "section": "Agile Documentation",
+    "content": "Agile Documentation quy định việc lưu trữ và cập nhật tài liệu trong dự án Agile. Các bước thực hiện: 1. Tài liệu thiết kế phải được lưu trữ. 2. Cập nhật wiki dự án. 3. Review tài liệu định kỳ. Vai trò: Developers, Project Manager. Ghi chú: Tài liệu phải luôn được cập nhật.",
+    "content_preview": "Agile Documentation quy định việc lưu trữ và cập nhật tài liệu trong dự án Agile. Các bước thực hiện: 1. Tài liệu thiết kế phải được lưu trữ. 2. Cập nhật wiki dự án. 3. Review tài liệu định kỳ. Vai tr"
   },
   {
     "chunk_id": "change_management_policy.txt::chunk_0",
     "file_name": "change_management_policy.txt",
     "title": "Change Management Policy",
-    "section": "Change Request",
-    "content": "Any modification to project scope, requirements, or timeline must be submitted as a Change Request. The request must include a description of the change and justification.",
-    "content_preview": "Any modification to project scope, requirements, or timeline must be submitted as a Change Request. The request must include a description of the change and justification."
+    "section": "Change Request Submission",
+    "content": "Change Request Submission quy định việc gửi yêu cầu thay đổi trong dự án. Các bước thực hiện: 1. Tạo change request trong hệ thống. 2. Mô tả chi tiết thay đổi. 3. Đính kèm tài liệu liên quan. Vai trò: Project Manager, Stakeholders. Ghi chú: Mọi thay đổi phải được ghi nhận.",
+    "content_preview": "Change Request Submission quy định việc gửi yêu cầu thay đổi trong dự án. Các bước thực hiện: 1. Tạo change request trong hệ thống. 2. Mô tả chi tiết thay đổi. 3. Đính kèm tài liệu liên quan. Vai trò:"
   },
   {
     "chunk_id": "change_management_policy.txt::chunk_1",
     "file_name": "change_management_policy.txt",
     "title": "Change Management Policy",
-    "section": "Impact Analysis",
-    "content": "The project manager and technical team evaluate the impact of the change. Impact analysis includes: - Schedule impact - Cost impact - Resource impact - Technical risks",
-    "content_preview": "The project manager and technical team evaluate the impact of the change. Impact analysis includes: - Schedule impact - Cost impact - Resource impact - Technical risks"
+    "section": "Change Impact Analysis",
+    "content": "Change Impact Analysis phân tích ảnh hưởng của thay đổi đối với hệ thống. Các bước thực hiện: 1. Xác định các module bị ảnh hưởng. 2. Đánh giá rủi ro. 3. Ước lượng thời gian và chi phí. Vai trò: Developers, Project Manager. Ghi chú: Bước quan trọng trước khi phê duyệt change.",
+    "content_preview": "Change Impact Analysis phân tích ảnh hưởng của thay đổi đối với hệ thống. Các bước thực hiện: 1. Xác định các module bị ảnh hưởng. 2. Đánh giá rủi ro. 3. Ước lượng thời gian và chi phí. Vai trò: Devel"
   },
   {
     "chunk_id": "change_management_policy.txt::chunk_2",
     "file_name": "change_management_policy.txt",
     "title": "Change Management Policy",
-    "section": "Approval Process",
-    "content": "After analysis, the change request must be approved by the project manager or change control board (CCB). Only approved changes may be implemented.",
-    "content_preview": "After analysis, the change request must be approved by the project manager or change control board (CCB). Only approved changes may be implemented."
+    "section": "Change Approval",
+    "content": "Change Approval quy định việc phê duyệt thay đổi. Các bước thực hiện: 1. Change request được review. 2. Đánh giá tác động. 3. Change board phê duyệt. Vai trò: Project Manager, Change Board. Ghi chú: Chỉ change được phê duyệt mới được triển khai.",
+    "content_preview": "Change Approval quy định việc phê duyệt thay đổi. Các bước thực hiện: 1. Change request được review. 2. Đánh giá tác động. 3. Change board phê duyệt. Vai trò: Project Manager, Change Board. Ghi chú: C"
   },
   {
     "chunk_id": "change_management_policy.txt::chunk_3",
     "file_name": "change_management_policy.txt",
     "title": "Change Management Policy",
-    "section": "Scope Creep Prevention",
-    "content": "Unauthorized changes should not be implemented. All changes must follow the formal change management process.",
-    "content_preview": "Unauthorized changes should not be implemented. All changes must follow the formal change management process."
+    "section": "Emergency Change",
+    "content": "Emergency Change quy định xử lý thay đổi khẩn cấp. Các bước thực hiện: 1. Xác định sự cố khẩn cấp. 2. Tạo emergency change request. 3. Phê duyệt nhanh. 4. Triển khai bản vá. Vai trò: DevOps, Project Manager. Ghi chú: Áp dụng khi hệ thống gặp sự cố nghiêm trọng.",
+    "content_preview": "Emergency Change quy định xử lý thay đổi khẩn cấp. Các bước thực hiện: 1. Xác định sự cố khẩn cấp. 2. Tạo emergency change request. 3. Phê duyệt nhanh. 4. Triển khai bản vá. Vai trò: DevOps, Project M"
+  },
+  {
+    "chunk_id": "change_management_policy.txt::chunk_4",
+    "file_name": "change_management_policy.txt",
+    "title": "Change Management Policy",
+    "section": "Change Testing",
+    "content": "Change Testing đảm bảo thay đổi được kiểm thử trước khi triển khai. Các bước thực hiện: 1. Triển khai change trên môi trường staging. 2. Thực hiện test. 3. QA xác nhận. Vai trò: QA, Developers. Ghi chú: Giảm rủi ro khi deploy.",
+    "content_preview": "Change Testing đảm bảo thay đổi được kiểm thử trước khi triển khai. Các bước thực hiện: 1. Triển khai change trên môi trường staging. 2. Thực hiện test. 3. QA xác nhận. Vai trò: QA, Developers. Ghi ch"
+  },
+  {
+    "chunk_id": "change_management_policy.txt::chunk_5",
+    "file_name": "change_management_policy.txt",
+    "title": "Change Management Policy",
+    "section": "Change Deployment",
+    "content": "Change Deployment quy định triển khai thay đổi lên môi trường production. Các bước thực hiện: 1. Lập lịch triển khai. 2. Backup hệ thống. 3. Triển khai change. 4. Giám sát hệ thống. Vai trò: DevOps. Ghi chú: Thường thực hiện ngoài giờ cao điểm.",
+    "content_preview": "Change Deployment quy định triển khai thay đổi lên môi trường production. Các bước thực hiện: 1. Lập lịch triển khai. 2. Backup hệ thống. 3. Triển khai change. 4. Giám sát hệ thống. Vai trò: DevOps. G"
+  },
+  {
+    "chunk_id": "change_management_policy.txt::chunk_6",
+    "file_name": "change_management_policy.txt",
+    "title": "Change Management Policy",
+    "section": "Change Rollback",
+    "content": "Change Rollback quy định việc khôi phục hệ thống khi change gây lỗi. Các bước thực hiện: 1. Xác định lỗi. 2. Kích hoạt rollback plan. 3. Khôi phục hệ thống. Vai trò: DevOps. Ghi chú: Rollback plan phải chuẩn bị trước.",
+    "content_preview": "Change Rollback quy định việc khôi phục hệ thống khi change gây lỗi. Các bước thực hiện: 1. Xác định lỗi. 2. Kích hoạt rollback plan. 3. Khôi phục hệ thống. Vai trò: DevOps. Ghi chú: Rollback plan phả"
+  },
+  {
+    "chunk_id": "change_management_policy.txt::chunk_7",
+    "file_name": "change_management_policy.txt",
+    "title": "Change Management Policy",
+    "section": "Change Documentation",
+    "content": "Change Documentation ghi nhận thay đổi trong tài liệu hệ thống. Các bước thực hiện: 1. Cập nhật tài liệu hệ thống. 2. Cập nhật sơ đồ kiến trúc. Vai trò: Developers. Ghi chú: Giúp quản lý thay đổi lâu dài.",
+    "content_preview": "Change Documentation ghi nhận thay đổi trong tài liệu hệ thống. Các bước thực hiện: 1. Cập nhật tài liệu hệ thống. 2. Cập nhật sơ đồ kiến trúc. Vai trò: Developers. Ghi chú: Giúp quản lý thay đổi lâu "
+  },
+  {
+    "chunk_id": "change_management_policy.txt::chunk_8",
+    "file_name": "change_management_policy.txt",
+    "title": "Change Management Policy",
+    "section": "Change Review",
+    "content": "Change Review đánh giá kết quả sau khi triển khai change. Các bước thực hiện: 1. Kiểm tra hệ thống sau deploy. 2. Ghi nhận bài học kinh nghiệm. Vai trò: Project Manager. Ghi chú: Giúp cải thiện quy trình change.",
+    "content_preview": "Change Review đánh giá kết quả sau khi triển khai change. Các bước thực hiện: 1. Kiểm tra hệ thống sau deploy. 2. Ghi nhận bài học kinh nghiệm. Vai trò: Project Manager. Ghi chú: Giúp cải thiện quy tr"
+  },
+  {
+    "chunk_id": "change_management_policy.txt::chunk_9",
+    "file_name": "change_management_policy.txt",
+    "title": "Change Management Policy",
+    "section": "Change Communication",
+    "content": "Change Communication thông báo thay đổi cho các bên liên quan. Các bước thực hiện: 1. Thông báo trước khi triển khai. 2. Cập nhật release notes. Vai trò: Project Manager. Ghi chú: Đảm bảo stakeholders nắm thông tin.",
+    "content_preview": "Change Communication thông báo thay đổi cho các bên liên quan. Các bước thực hiện: 1. Thông báo trước khi triển khai. 2. Cập nhật release notes. Vai trò: Project Manager. Ghi chú: Đảm bảo stakeholders"
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_0",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Reporting",
+    "content": "Incident Reporting quy định cách báo cáo sự cố hệ thống. Các bước thực hiện: 1. Phát hiện sự cố. 2. Tạo ticket incident. 3. Thông báo đội vận hành. Vai trò: DevOps, Support Team. Ghi chú: Phải ghi nhận mọi incident.",
+    "content_preview": "Incident Reporting quy định cách báo cáo sự cố hệ thống. Các bước thực hiện: 1. Phát hiện sự cố. 2. Tạo ticket incident. 3. Thông báo đội vận hành. Vai trò: DevOps, Support Team. Ghi chú: Phải ghi nhậ"
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_1",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Classification",
+    "content": "Incident Classification phân loại mức độ nghiêm trọng của incident. Các bước thực hiện: 1. Xác định severity. 2. Xác định priority. Vai trò: Support Team. Ghi chú: Giúp xử lý nhanh hơn.",
+    "content_preview": "Incident Classification phân loại mức độ nghiêm trọng của incident. Các bước thực hiện: 1. Xác định severity. 2. Xác định priority. Vai trò: Support Team. Ghi chú: Giúp xử lý nhanh hơn."
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_2",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Response",
+    "content": "Incident Response quy định phản ứng khi xảy ra incident. Các bước thực hiện: 1. Thông báo đội kỹ thuật. 2. Điều tra nguyên nhân. 3. Thực hiện khắc phục. Vai trò: DevOps, Developers. Ghi chú: Phải phản ứng nhanh.",
+    "content_preview": "Incident Response quy định phản ứng khi xảy ra incident. Các bước thực hiện: 1. Thông báo đội kỹ thuật. 2. Điều tra nguyên nhân. 3. Thực hiện khắc phục. Vai trò: DevOps, Developers. Ghi chú: Phải phản"
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_3",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Escalation",
+    "content": "Incident Escalation quy định leo thang khi incident nghiêm trọng. Các bước thực hiện: 1. Xác định incident nghiêm trọng. 2. Báo cáo quản lý cấp cao. Vai trò: Project Manager. Ghi chú: Áp dụng cho incident mức cao.",
+    "content_preview": "Incident Escalation quy định leo thang khi incident nghiêm trọng. Các bước thực hiện: 1. Xác định incident nghiêm trọng. 2. Báo cáo quản lý cấp cao. Vai trò: Project Manager. Ghi chú: Áp dụng cho inci"
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_4",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Resolution",
+    "content": "Incident Resolution quy định cách khắc phục incident. Các bước thực hiện: 1. Tìm nguyên nhân. 2. Sửa lỗi. 3. Khôi phục hệ thống. Vai trò: Developers, DevOps. Ghi chú: Phải đảm bảo hệ thống ổn định.",
+    "content_preview": "Incident Resolution quy định cách khắc phục incident. Các bước thực hiện: 1. Tìm nguyên nhân. 2. Sửa lỗi. 3. Khôi phục hệ thống. Vai trò: Developers, DevOps. Ghi chú: Phải đảm bảo hệ thống ổn định."
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_5",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Communication",
+    "content": "Incident Communication thông báo tình trạng incident cho stakeholders. Các bước thực hiện: 1. Cập nhật tình trạng. 2. Gửi thông báo. Vai trò: Project Manager. Ghi chú: Đảm bảo minh bạch.",
+    "content_preview": "Incident Communication thông báo tình trạng incident cho stakeholders. Các bước thực hiện: 1. Cập nhật tình trạng. 2. Gửi thông báo. Vai trò: Project Manager. Ghi chú: Đảm bảo minh bạch."
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_6",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Monitoring",
+    "content": "Incident Monitoring giám sát hệ thống để phát hiện incident. Các bước thực hiện: 1. Theo dõi logs. 2. Sử dụng monitoring tools. Vai trò: DevOps. Ghi chú: Phát hiện sớm sự cố.",
+    "content_preview": "Incident Monitoring giám sát hệ thống để phát hiện incident. Các bước thực hiện: 1. Theo dõi logs. 2. Sử dụng monitoring tools. Vai trò: DevOps. Ghi chú: Phát hiện sớm sự cố."
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_7",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Postmortem",
+    "content": "Incident Postmortem phân tích sau khi incident kết thúc. Các bước thực hiện: 1. Tổ chức họp postmortem. 2. Ghi nhận nguyên nhân. 3. Đề xuất cải tiến. Vai trò: Project Manager, Developers. Ghi chú: Giúp tránh lặp lại lỗi.",
+    "content_preview": "Incident Postmortem phân tích sau khi incident kết thúc. Các bước thực hiện: 1. Tổ chức họp postmortem. 2. Ghi nhận nguyên nhân. 3. Đề xuất cải tiến. Vai trò: Project Manager, Developers. Ghi chú: Giú"
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_8",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Knowledge Base",
+    "content": "Incident Knowledge Base lưu trữ kinh nghiệm xử lý incident. Các bước thực hiện: 1. Ghi lại cách xử lý. 2. Cập nhật knowledge base. Vai trò: Support Team. Ghi chú: Giúp xử lý nhanh hơn lần sau.",
+    "content_preview": "Incident Knowledge Base lưu trữ kinh nghiệm xử lý incident. Các bước thực hiện: 1. Ghi lại cách xử lý. 2. Cập nhật knowledge base. Vai trò: Support Team. Ghi chú: Giúp xử lý nhanh hơn lần sau."
+  },
+  {
+    "chunk_id": "incident_management_policy.txt::chunk_9",
+    "file_name": "incident_management_policy.txt",
+    "title": "Incident Management Policy",
+    "section": "Incident Prevention",
+    "content": "Incident Prevention đưa ra biện pháp ngăn ngừa incident. Các bước thực hiện: 1. Phân tích các incident cũ. 2. Triển khai giải pháp phòng tránh. Vai trò: DevOps, Project Manager. Ghi chú: Giảm thiểu rủi ro hệ thống.",
+    "content_preview": "Incident Prevention đưa ra biện pháp ngăn ngừa incident. Các bước thực hiện: 1. Phân tích các incident cũ. 2. Triển khai giải pháp phòng tránh. Vai trò: DevOps, Project Manager. Ghi chú: Giảm thiểu rủ"
   },
   {
     "chunk_id": "quality_policy.txt::chunk_0",
     "file_name": "quality_policy.txt",
-    "title": "Software Quality Policy",
+    "title": "Quality Assurance Policy",
     "section": "Code Review",
-    "content": "All source code must undergo peer review before merging into the main branch. Code review ensures code quality, readability, and adherence to coding standards.",
-    "content_preview": "All source code must undergo peer review before merging into the main branch. Code review ensures code quality, readability, and adherence to coding standards."
+    "content": "Code Review đảm bảo chất lượng code thông qua việc review. Các bước thực hiện: 1. Tạo pull request. 2. Reviewer kiểm tra code. 3. Approve trước khi merge. Vai trò: Developers. Ghi chú: Mọi code phải được review.",
+    "content_preview": "Code Review đảm bảo chất lượng code thông qua việc review. Các bước thực hiện: 1. Tạo pull request. 2. Reviewer kiểm tra code. 3. Approve trước khi merge. Vai trò: Developers. Ghi chú: Mọi code phải đ"
   },
   {
     "chunk_id": "quality_policy.txt::chunk_1",
     "file_name": "quality_policy.txt",
-    "title": "Software Quality Policy",
-    "section": "Testing",
-    "content": "Testing must include: - Unit testing - Integration testing - System testing Test cases should be documented and automated where possible.",
-    "content_preview": "Testing must include: - Unit testing - Integration testing - System testing Test cases should be documented and automated where possible."
+    "title": "Quality Assurance Policy",
+    "section": "Unit Testing",
+    "content": "Unit Testing quy định viết unit test cho các module. Các bước thực hiện: 1. Viết test case. 2. Chạy unit test. 3. Đảm bảo coverage tối thiểu. Vai trò: Developers. Ghi chú: Coverage nên trên 70%.",
+    "content_preview": "Unit Testing quy định viết unit test cho các module. Các bước thực hiện: 1. Viết test case. 2. Chạy unit test. 3. Đảm bảo coverage tối thiểu. Vai trò: Developers. Ghi chú: Coverage nên trên 70%."
   },
   {
     "chunk_id": "quality_policy.txt::chunk_2",
     "file_name": "quality_policy.txt",
-    "title": "Software Quality Policy",
-    "section": "Continuous Integration",
-    "content": "Projects should use Continuous Integration (CI) pipelines. CI pipelines automatically run tests and checks whenever new code is pushed.",
-    "content_preview": "Projects should use Continuous Integration (CI) pipelines. CI pipelines automatically run tests and checks whenever new code is pushed."
+    "title": "Quality Assurance Policy",
+    "section": "Integration Testing",
+    "content": "Integration Testing kiểm thử sự tương tác giữa các module. Các bước thực hiện: 1. Xác định các module liên quan. 2. Chạy integration test. 3. Xác nhận dữ liệu truyền đúng. Vai trò: QA. Ghi chú: Quan trọng với hệ thống lớn.",
+    "content_preview": "Integration Testing kiểm thử sự tương tác giữa các module. Các bước thực hiện: 1. Xác định các module liên quan. 2. Chạy integration test. 3. Xác nhận dữ liệu truyền đúng. Vai trò: QA. Ghi chú: Quan t"
   },
   {
     "chunk_id": "quality_policy.txt::chunk_3",
     "file_name": "quality_policy.txt",
-    "title": "Software Quality Policy",
-    "section": "Documentation",
-    "content": "Technical documentation must be maintained and updated regularly. Documentation includes architecture diagrams, API specifications, and user guides.",
-    "content_preview": "Technical documentation must be maintained and updated regularly. Documentation includes architecture diagrams, API specifications, and user guides."
+    "title": "Quality Assurance Policy",
+    "section": "Regression Testing",
+    "content": "Regression Testing đảm bảo thay đổi không phá vỡ chức năng cũ. Các bước thực hiện: 1. Chạy regression test suite. 2. Xác nhận các chức năng cũ hoạt động. Vai trò: QA. Ghi chú: Thực hiện trước mỗi release.",
+    "content_preview": "Regression Testing đảm bảo thay đổi không phá vỡ chức năng cũ. Các bước thực hiện: 1. Chạy regression test suite. 2. Xác nhận các chức năng cũ hoạt động. Vai trò: QA. Ghi chú: Thực hiện trước mỗi rele"
   },
   {
-    "chunk_id": "risk_management_policy.txt::chunk_0",
-    "file_name": "risk_management_policy.txt",
-    "title": "Risk Management Policy",
-    "section": "Risk Identification",
-    "content": "Project teams must identify potential risks at the beginning of the project. Risks may include technical risks, schedule risks, or resource risks.",
-    "content_preview": "Project teams must identify potential risks at the beginning of the project. Risks may include technical risks, schedule risks, or resource risks."
+    "chunk_id": "quality_policy.txt::chunk_4",
+    "file_name": "quality_policy.txt",
+    "title": "Quality Assurance Policy",
+    "section": "Bug Tracking",
+    "content": "Bug Tracking quy định quản lý lỗi phần mềm. Các bước thực hiện: 1. Ghi nhận bug trong hệ thống. 2. Phân loại mức độ lỗi. 3. Giao cho developer sửa. Vai trò: QA, Developers. Ghi chú: Sử dụng Jira hoặc hệ thống tương tự.",
+    "content_preview": "Bug Tracking quy định quản lý lỗi phần mềm. Các bước thực hiện: 1. Ghi nhận bug trong hệ thống. 2. Phân loại mức độ lỗi. 3. Giao cho developer sửa. Vai trò: QA, Developers. Ghi chú: Sử dụng Jira hoặc "
   },
   {
-    "chunk_id": "risk_management_policy.txt::chunk_1",
-    "file_name": "risk_management_policy.txt",
-    "title": "Risk Management Policy",
-    "section": "Risk Assessment",
-    "content": "Each risk should be evaluated based on: - Probability of occurrence - Potential impact on the project Risks should be categorized as low, medium, or high.",
-    "content_preview": "Each risk should be evaluated based on: - Probability of occurrence - Potential impact on the project Risks should be categorized as low, medium, or high."
+    "chunk_id": "quality_policy.txt::chunk_5",
+    "file_name": "quality_policy.txt",
+    "title": "Quality Assurance Policy",
+    "section": "QA Release Approval",
+    "content": "QA Release Approval quy định QA phải xác nhận trước khi phát hành. Các bước thực hiện: 1. Kiểm tra build. 2. Chạy test. 3. Phê duyệt release. Vai trò: QA. Ghi chú: Không release khi QA chưa approve.",
+    "content_preview": "QA Release Approval quy định QA phải xác nhận trước khi phát hành. Các bước thực hiện: 1. Kiểm tra build. 2. Chạy test. 3. Phê duyệt release. Vai trò: QA. Ghi chú: Không release khi QA chưa approve."
   },
   {
-    "chunk_id": "risk_management_policy.txt::chunk_2",
-    "file_name": "risk_management_policy.txt",
-    "title": "Risk Management Policy",
-    "section": "Risk Mitigation",
-    "content": "For each high or medium risk, mitigation strategies must be defined. Mitigation may include additional testing, resource allocation, or schedule adjustments.",
-    "content_preview": "For each high or medium risk, mitigation strategies must be defined. Mitigation may include additional testing, resource allocation, or schedule adjustments."
+    "chunk_id": "quality_policy.txt::chunk_6",
+    "file_name": "quality_policy.txt",
+    "title": "Quality Assurance Policy",
+    "section": "Performance Testing",
+    "content": "Performance Testing đảm bảo hệ thống chịu tải tốt. Các bước thực hiện: 1. Thiết lập kịch bản load test. 2. Chạy test. 3. Phân tích kết quả. Vai trò: QA, DevOps. Ghi chú: Quan trọng với hệ thống lớn.",
+    "content_preview": "Performance Testing đảm bảo hệ thống chịu tải tốt. Các bước thực hiện: 1. Thiết lập kịch bản load test. 2. Chạy test. 3. Phân tích kết quả. Vai trò: QA, DevOps. Ghi chú: Quan trọng với hệ thống lớn."
   },
   {
-    "chunk_id": "risk_management_policy.txt::chunk_3",
-    "file_name": "risk_management_policy.txt",
-    "title": "Risk Management Policy",
-    "section": "Risk Monitoring",
-    "content": "Risks must be reviewed periodically during project meetings. New risks should be added to the risk register when identified.",
-    "content_preview": "Risks must be reviewed periodically during project meetings. New risks should be added to the risk register when identified."
+    "chunk_id": "quality_policy.txt::chunk_7",
+    "file_name": "quality_policy.txt",
+    "title": "Quality Assurance Policy",
+    "section": "Security Testing",
+    "content": "Security Testing kiểm tra lỗ hổng bảo mật. Các bước thực hiện: 1. Thực hiện scan bảo mật. 2. Thực hiện penetration test. Vai trò: Security Team, QA. Ghi chú: Bắt buộc với hệ thống production.",
+    "content_preview": "Security Testing kiểm tra lỗ hổng bảo mật. Các bước thực hiện: 1. Thực hiện scan bảo mật. 2. Thực hiện penetration test. Vai trò: Security Team, QA. Ghi chú: Bắt buộc với hệ thống production."
+  },
+  {
+    "chunk_id": "quality_policy.txt::chunk_8",
+    "file_name": "quality_policy.txt",
+    "title": "Quality Assurance Policy",
+    "section": "Test Documentation",
+    "content": "Test Documentation quy định việc viết tài liệu test. Các bước thực hiện: 1. Viết test case. 2. Lưu test results. Vai trò: QA. Ghi chú: Phục vụ audit.",
+    "content_preview": "Test Documentation quy định việc viết tài liệu test. Các bước thực hiện: 1. Viết test case. 2. Lưu test results. Vai trò: QA. Ghi chú: Phục vụ audit."
+  },
+  {
+    "chunk_id": "quality_policy.txt::chunk_9",
+    "file_name": "quality_policy.txt",
+    "title": "Quality Assurance Policy",
+    "section": "Quality Metrics",
+    "content": "Quality Metrics quy định theo dõi các chỉ số chất lượng. Các bước thực hiện: 1. Theo dõi defect rate. 2. Theo dõi test coverage. Vai trò: QA, Project Manager. Ghi chú: Dùng để cải tiến quy trình.",
+    "content_preview": "Quality Metrics quy định theo dõi các chỉ số chất lượng. Các bước thực hiện: 1. Theo dõi defect rate. 2. Theo dõi test coverage. Vai trò: QA, Project Manager. Ghi chú: Dùng để cải tiến quy trình."
   }
 ]

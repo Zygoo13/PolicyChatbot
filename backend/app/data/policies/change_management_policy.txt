@@ -1,21 +1,90 @@
 TITLE: Change Management Policy
 
-SECTION: Change Request
-Any modification to project scope, requirements, or timeline must be submitted as a Change Request.
-The request must include a description of the change and justification.
+SECTION: Change Request Submission
+Change Request Submission quy định việc gửi yêu cầu thay đổi trong dự án.
+Các bước thực hiện:
+1. Tạo change request trong hệ thống.
+2. Mô tả chi tiết thay đổi.
+3. Đính kèm tài liệu liên quan.
+Vai trò: Project Manager, Stakeholders.
+Ghi chú: Mọi thay đổi phải được ghi nhận.
 
-SECTION: Impact Analysis
-The project manager and technical team evaluate the impact of the change.
-Impact analysis includes:
-- Schedule impact
-- Cost impact
-- Resource impact
-- Technical risks
+SECTION: Change Impact Analysis
+Change Impact Analysis phân tích ảnh hưởng của thay đổi đối với hệ thống.
+Các bước thực hiện:
+1. Xác định các module bị ảnh hưởng.
+2. Đánh giá rủi ro.
+3. Ước lượng thời gian và chi phí.
+Vai trò: Developers, Project Manager.
+Ghi chú: Bước quan trọng trước khi phê duyệt change.
 
-SECTION: Approval Process
-After analysis, the change request must be approved by the project manager or change control board (CCB).
-Only approved changes may be implemented.
+SECTION: Change Approval
+Change Approval quy định việc phê duyệt thay đổi.
+Các bước thực hiện:
+1. Change request được review.
+2. Đánh giá tác động.
+3. Change board phê duyệt.
+Vai trò: Project Manager, Change Board.
+Ghi chú: Chỉ change được phê duyệt mới được triển khai.
 
-SECTION: Scope Creep Prevention
-Unauthorized changes should not be implemented.
-All changes must follow the formal change management process.
+SECTION: Emergency Change
+Emergency Change quy định xử lý thay đổi khẩn cấp.
+Các bước thực hiện:
+1. Xác định sự cố khẩn cấp.
+2. Tạo emergency change request.
+3. Phê duyệt nhanh.
+4. Triển khai bản vá.
+Vai trò: DevOps, Project Manager.
+Ghi chú: Áp dụng khi hệ thống gặp sự cố nghiêm trọng.
+
+SECTION: Change Testing
+Change Testing đảm bảo thay đổi được kiểm thử trước khi triển khai.
+Các bước thực hiện:
+1. Triển khai change trên môi trường staging.
+2. Thực hiện test.
+3. QA xác nhận.
+Vai trò: QA, Developers.
+Ghi chú: Giảm rủi ro khi deploy.
+
+SECTION: Change Deployment
+Change Deployment quy định triển khai thay đổi lên môi trường production.
+Các bước thực hiện:
+1. Lập lịch triển khai.
+2. Backup hệ thống.
+3. Triển khai change.
+4. Giám sát hệ thống.
+Vai trò: DevOps.
+Ghi chú: Thường thực hiện ngoài giờ cao điểm.
+
+SECTION: Change Rollback
+Change Rollback quy định việc khôi phục hệ thống khi change gây lỗi.
+Các bước thực hiện:
+1. Xác định lỗi.
+2. Kích hoạt rollback plan.
+3. Khôi phục hệ thống.
+Vai trò: DevOps.
+Ghi chú: Rollback plan phải chuẩn bị trước.
+
+SECTION: Change Documentation
+Change Documentation ghi nhận thay đổi trong tài liệu hệ thống.
+Các bước thực hiện:
+1. Cập nhật tài liệu hệ thống.
+2. Cập nhật sơ đồ kiến trúc.
+Vai trò: Developers.
+Ghi chú: Giúp quản lý thay đổi lâu dài.
+
+SECTION: Change Review
+Change Review đánh giá kết quả sau khi triển khai change.
+Các bước thực hiện:
+1. Kiểm tra hệ thống sau deploy.
+2. Ghi nhận bài học kinh nghiệm.
+Vai trò: Project Manager.
+Ghi chú: Giúp cải thiện quy trình change.
+
+SECTION: Change Communication
+Change Communication thông báo thay đổi cho các bên liên quan.
+Các bước thực hiện:
+1. Thông báo trước khi triển khai.
+2. Cập nhật release notes.
+Vai trò: Project Manager.
+Ghi chú: Đảm bảo stakeholders nắm thông tin.

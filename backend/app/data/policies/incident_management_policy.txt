@@ -1,0 +1,85 @@
+TITLE: Incident Management Policy
+
+SECTION: Incident Reporting
+Incident Reporting quy định cách báo cáo sự cố hệ thống.
+Các bước thực hiện:
+1. Phát hiện sự cố.
+2. Tạo ticket incident.
+3. Thông báo đội vận hành.
+Vai trò: DevOps, Support Team.
+Ghi chú: Phải ghi nhận mọi incident.
+
+SECTION: Incident Classification
+Incident Classification phân loại mức độ nghiêm trọng của incident.
+Các bước thực hiện:
+1. Xác định severity.
+2. Xác định priority.
+Vai trò: Support Team.
+Ghi chú: Giúp xử lý nhanh hơn.
+
+SECTION: Incident Response
+Incident Response quy định phản ứng khi xảy ra incident.
+Các bước thực hiện:
+1. Thông báo đội kỹ thuật.
+2. Điều tra nguyên nhân.
+3. Thực hiện khắc phục.
+Vai trò: DevOps, Developers.
+Ghi chú: Phải phản ứng nhanh.
+
+SECTION: Incident Escalation
+Incident Escalation quy định leo thang khi incident nghiêm trọng.
+Các bước thực hiện:
+1. Xác định incident nghiêm trọng.
+2. Báo cáo quản lý cấp cao.
+Vai trò: Project Manager.
+Ghi chú: Áp dụng cho incident mức cao.
+
+SECTION: Incident Resolution
+Incident Resolution quy định cách khắc phục incident.
+Các bước thực hiện:
+1. Tìm nguyên nhân.
+2. Sửa lỗi.
+3. Khôi phục hệ thống.
+Vai trò: Developers, DevOps.
+Ghi chú: Phải đảm bảo hệ thống ổn định.
+
+SECTION: Incident Communication
+Incident Communication thông báo tình trạng incident cho stakeholders.
+Các bước thực hiện:
+1. Cập nhật tình trạng.
+2. Gửi thông báo.
+Vai trò: Project Manager.
+Ghi chú: Đảm bảo minh bạch.
+
+SECTION: Incident Monitoring
+Incident Monitoring giám sát hệ thống để phát hiện incident.
+Các bước thực hiện:
+1. Theo dõi logs.
+2. Sử dụng monitoring tools.
+Vai trò: DevOps.
+Ghi chú: Phát hiện sớm sự cố.
+
+SECTION: Incident Postmortem
+Incident Postmortem phân tích sau khi incident kết thúc.
+Các bước thực hiện:
+1. Tổ chức họp postmortem.
+2. Ghi nhận nguyên nhân.
+3. Đề xuất cải tiến.
+Vai trò: Project Manager, Developers.
+Ghi chú: Giúp tránh lặp lại lỗi.
+
+SECTION: Incident Knowledge Base
+Incident Knowledge Base lưu trữ kinh nghiệm xử lý incident.
+Các bước thực hiện:
+1. Ghi lại cách xử lý.
+2. Cập nhật knowledge base.
+Vai trò: Support Team.
+Ghi chú: Giúp xử lý nhanh hơn lần sau.
+
+SECTION: Incident Prevention
+Incident Prevention đưa ra biện pháp ngăn ngừa incident.
+Các bước thực hiện:
+1. Phân tích các incident cũ.
+2. Triển khai giải pháp phòng tránh.
+Vai trò: DevOps, Project Manager.
+Ghi chú: Giảm thiểu rủi ro hệ thống.
