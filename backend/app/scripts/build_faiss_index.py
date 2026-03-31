@@ -1,7 +1,6 @@
 import json
-import os
 from pathlib import Path
-from typing import List, Dict
+from typing import Dict, List
 
 import faiss
 import numpy as np
@@ -19,14 +18,17 @@ EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 
 def read_policy_files() -> List[Dict]:
-    documents = []
+    documents: List[Dict] = []
 
     if not POLICIES_DIR.exists():
         raise FileNotFoundError(f"Policies directory not found: {POLICIES_DIR}")
 
-    for file_path in POLICIES_DIR.glob("*.txt"):
-        with open(file_path, "r", encoding="utf-8") as f:
-            text = f.read().strip()
+    for file_path in sorted(POLICIES_DIR.glob("*.txt")):
+        with open(file_path, "r", encoding="utf-8") as file:
+            text = file.read().strip()
+
+        if not text:
+            continue
 
         documents.append(
             {
@@ -40,23 +42,22 @@ def read_policy_files() -> List[Dict]:
 
 def extract_title(text: str) -> str:
     for line in text.splitlines():
-        line = line.strip()
-        if line.startswith("TITLE:"):
-            return line.replace("TITLE:", "").strip()
+        stripped = line.strip()
+        if stripped.startswith("TITLE:"):
+            return stripped.replace("TITLE:", "", 1).strip()
     return "Untitled"
 
 
 def split_into_sections(text: str) -> List[Dict]:
     lines = text.splitlines()
-
     title = extract_title(text)
-    chunks = []
 
+    chunks: List[Dict] = []
     current_section = None
-    current_content = []
+    current_content: List[str] = []
 
-    for line in lines:
-        line = line.strip()
+    for raw_line in lines:
+        line = raw_line.strip()
 
         if not line:
             continue
@@ -66,44 +67,52 @@ def split_into_sections(text: str) -> List[Dict]:
 
         if line.startswith("SECTION:"):
             if current_section and current_content:
-                chunks.append(
-                    {
-                        "title": title,
-                        "section": current_section,
-                        "content": " ".join(current_content).strip(),
-                    }
-                )
-            current_section = line.replace("SECTION:", "").strip()
+                content = "\n".join(current_content).strip()
+                if content:
+                    chunks.append(
+                        {
+                            "title": title,
+                            "section": current_section,
+                            "content": content,
+                        }
+                    )
+            current_section = line.replace("SECTION:", "", 1).strip()
             current_content = []
         else:
             current_content.append(line)
 
     if current_section and current_content:
-        chunks.append(
-            {
-                "title": title,
-                "section": current_section,
-                "content": " ".join(current_content).strip(),
-            }
-        )
+        content = "\n".join(current_content).strip()
+        if content:
+            chunks.append(
+                {
+                    "title": title,
+                    "section": current_section,
+                    "content": content,
+                }
+            )
 
     return chunks
 
 
 def build_chunks(documents: List[Dict]) -> List[Dict]:
-    all_chunks = []
+    all_chunks: List[Dict] = []
 
     for doc in documents:
         file_name = doc["file_name"]
         text = doc["text"]
-
         sections = split_into_sections(text)
 
         for idx, section in enumerate(sections):
             chunk_text = section["content"].strip()
-
             if not chunk_text:
                 continue
+
+            searchable_text = (
+                f"Title: {section['title']}\n"
+                f"Section: {section['section']}\n"
+                f"Content:\n{chunk_text}"
+            ).strip()
 
             all_chunks.append(
                 {
@@ -113,6 +122,7 @@ def build_chunks(documents: List[Dict]) -> List[Dict]:
                     "section": section["section"],
                     "content": chunk_text,
                     "content_preview": chunk_text[:200],
+                    "searchable_text": searchable_text,
                 }
             )
 
@@ -121,7 +131,11 @@ def build_chunks(documents: List[Dict]) -> List[Dict]:
 
 def build_embeddings(texts: List[str]) -> np.ndarray:
     model = SentenceTransformer(EMBEDDING_MODEL_NAME)
-    embeddings = model.encode(texts, convert_to_numpy=True, show_progress_bar=True)
+    embeddings = model.encode(
+        texts,
+        convert_to_numpy=True,
+        show_progress_bar=True,
+    )
 
     if embeddings.dtype != np.float32:
         embeddings = embeddings.astype("float32")
@@ -140,8 +154,15 @@ def save_faiss_index(embeddings: np.ndarray) -> None:
 
 
 def save_metadata(chunks: List[Dict]) -> None:
-    with open(METADATA_PATH, "w", encoding="utf-8") as f:
-        json.dump(chunks, f, ensure_ascii=False, indent=2)
+    cleaned_chunks = []
+
+    for chunk in chunks:
+        cleaned = dict(chunk)
+        cleaned.pop("searchable_text", None)
+        cleaned_chunks.append(cleaned)
+
+    with open(METADATA_PATH, "w", encoding="utf-8") as file:
+        json.dump(cleaned_chunks, file, ensure_ascii=False, indent=2)
 
 
 def main():
@@ -156,8 +177,7 @@ def main():
     if not chunks:
         raise ValueError("No chunks were created. Please check your policy files.")
 
-    texts = [chunk["content"] for chunk in chunks]
-
+    texts = [chunk["searchable_text"] for chunk in chunks]
     embeddings = build_embeddings(texts)
     print(f"Embeddings shape: {embeddings.shape}")
 
