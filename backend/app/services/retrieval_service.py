@@ -1,6 +1,8 @@
 import json
+import re
+import unicodedata
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import faiss
 import numpy as np
@@ -16,12 +18,20 @@ INDEX_PATH = VECTORSTORE_DIR / "index.faiss"
 METADATA_PATH = VECTORSTORE_DIR / "metadata.json"
 
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
-DISTANCE_THRESHOLD = 3.0
+SIMILARITY_THRESHOLD = 0.25
 DEFAULT_TOP_K = 3
+RAW_CANDIDATE_K = 8
 
 _embedding_model: Optional[SentenceTransformer] = None
 _faiss_index = None
 _metadata: Optional[List[Dict[str, Any]]] = None
+
+
+def _normalize_text(text: str) -> str:
+    text = text.lower().strip()
+    text = unicodedata.normalize("NFKC", text)
+    text = re.sub(r"\s+", " ", text)
+    return text
 
 
 def _get_embedding_model() -> SentenceTransformer:
@@ -68,7 +78,7 @@ def reset_cache() -> None:
 
 
 def metadata_to_source_item(
-    metadata: Dict[str, Any], distance: Optional[float] = None
+    metadata: Dict[str, Any], score: Optional[float] = None
 ) -> SourceItem:
     return SourceItem(
         file_name=metadata.get("file_name", "unknown"),
@@ -77,18 +87,51 @@ def metadata_to_source_item(
         chunk_id=metadata.get("chunk_id"),
         content_preview=metadata.get("content_preview"),
         content=metadata.get("content"),
-        distance=distance,
+        score=score,
     )
 
 
 def _embed_query(question: str) -> np.ndarray:
     model = _get_embedding_model()
-    embedding = model.encode([question], convert_to_numpy=True)
+    embedding = model.encode(
+        [question],
+        convert_to_numpy=True,
+        normalize_embeddings=True,
+    )
 
     if embedding.dtype != np.float32:
         embedding = embedding.astype("float32")
 
     return embedding
+
+
+def _find_exact_section_matches(
+    question: str, metadata_list: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    normalized_question = _normalize_text(question)
+    matched = []
+
+    for item in metadata_list:
+        section = item.get("section", "")
+        if not section:
+            continue
+
+        normalized_section = _normalize_text(section)
+
+        if normalized_section in normalized_question:
+            matched.append(item)
+
+    return matched
+
+
+def _keyword_overlap_score(question: str, metadata: Dict[str, Any]) -> int:
+    q = set(_normalize_text(question).split())
+    section = _normalize_text(metadata.get("section", ""))
+    title = _normalize_text(metadata.get("title", ""))
+    content = _normalize_text(metadata.get("content_preview", ""))
+
+    tokens = set((section + " " + title + " " + content).split())
+    return len(q & tokens)
 
 
 def search_relevant_chunks(
@@ -100,20 +143,33 @@ def search_relevant_chunks(
     index = _load_faiss_index()
     metadata_list = _load_metadata()
 
-    query_vector = _embed_query(question)
-    distances, indices = index.search(query_vector, top_k)
+    exact_matches = _find_exact_section_matches(question, metadata_list)
+    if exact_matches:
+        ranked_exact = sorted(
+            exact_matches,
+            key=lambda x: (
+                -_keyword_overlap_score(question, x),
+                x.get("section", ""),
+            ),
+        )
+        return [
+            metadata_to_source_item(item, score=1.0) for item in ranked_exact[:top_k]
+        ]
 
-    results: List[SourceItem] = []
+    query_vector = _embed_query(question)
+    scores, indices = index.search(query_vector, RAW_CANDIDATE_K)
+
+    candidates: List[Tuple[float, Dict[str, Any]]] = []
     seen_chunk_ids = set()
 
-    for dist, idx in zip(distances[0], indices[0]):
+    for score, idx in zip(scores[0], indices[0]):
         if idx == -1:
             continue
 
         if idx < 0 or idx >= len(metadata_list):
             continue
 
-        if float(dist) > DISTANCE_THRESHOLD:
+        if float(score) < SIMILARITY_THRESHOLD:
             continue
 
         item_metadata = metadata_list[idx]
@@ -125,9 +181,24 @@ def search_relevant_chunks(
         if chunk_id:
             seen_chunk_ids.add(chunk_id)
 
-        results.append(metadata_to_source_item(item_metadata, distance=float(dist)))
+        candidates.append((float(score), item_metadata))
 
-    return results
+    reranked = sorted(
+        candidates,
+        key=lambda x: (
+            x[0] + 0.05 * _keyword_overlap_score(question, x[1]),
+            (
+                1
+                if _normalize_text(x[1].get("section", "")) in _normalize_text(question)
+                else 0
+            ),
+        ),
+        reverse=True,
+    )
+
+    return [
+        metadata_to_source_item(item, score=score) for score, item in reranked[:top_k]
+    ]
 
 
 def build_context_from_sources(sources: List[SourceItem]) -> str:

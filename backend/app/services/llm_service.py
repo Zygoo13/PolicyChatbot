@@ -23,25 +23,37 @@ _model = None
 def _get_model():
     global _model
 
-    if not settings.GEMINI_API_KEY.strip():
+    api_key = settings.GEMINI_API_KEY.strip()
+    model_name = settings.GEMINI_MODEL.strip()
+
+    if not api_key:
         raise ConfigurationError("Thiếu GEMINI_API_KEY trong file .env")
 
+    if not model_name:
+        raise ConfigurationError("Thiếu GEMINI_MODEL trong file .env")
+
     if _model is None:
-        genai.configure(api_key=settings.GEMINI_API_KEY)
-        _model = genai.GenerativeModel(settings.GEMINI_MODEL)
+        genai.configure(api_key=api_key)
+        _model = genai.GenerativeModel(model_name)
 
     return _model
 
 
 def generate_answer(user_prompt: str, system_prompt: Optional[str] = None) -> str:
-    prompt = f"{system_prompt or DEFAULT_SYSTEM_PROMPT}\n\n{user_prompt}".strip()
+    normalized_user_prompt = user_prompt.strip()
+    if not normalized_user_prompt:
+        raise AIServiceError("user_prompt không được để trống.")
+
+    final_system_prompt = (system_prompt or DEFAULT_SYSTEM_PROMPT).strip()
+    prompt = f"{final_system_prompt}\n\n{normalized_user_prompt}".strip()
 
     try:
         model = _get_model()
         response = model.generate_content(prompt)
 
-        if hasattr(response, "text") and response.text:
-            return response.text.strip()
+        text = getattr(response, "text", None)
+        if text and text.strip():
+            return text.strip()
 
         raise AIServiceError("Mô hình không trả về nội dung hợp lệ.")
     except (ConfigurationError, AIServiceError):

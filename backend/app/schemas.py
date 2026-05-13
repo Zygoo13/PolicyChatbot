@@ -1,6 +1,6 @@
 from typing import List, Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 ChatMode = Literal["llm_only", "rag", "rag_prompt"]
@@ -10,6 +10,14 @@ class ChatRequest(BaseModel):
     question: str = Field(..., min_length=1, max_length=2000)
     mode: ChatMode = Field(default="llm_only")
 
+    @field_validator("question")
+    @classmethod
+    def validate_question(cls, value: str) -> str:
+        normalized = " ".join(value.strip().split())
+        if not normalized:
+            raise ValueError("Question must not be empty.")
+        return normalized
+
 
 class SourceItem(BaseModel):
     file_name: str
@@ -18,7 +26,7 @@ class SourceItem(BaseModel):
     chunk_id: Optional[str] = None
     content_preview: Optional[str] = None
     content: Optional[str] = None
-    distance: Optional[float] = None
+    score: Optional[float] = None
 
 
 class ChatResponse(BaseModel):

@@ -109,9 +109,9 @@ def build_chunks(documents: List[Dict]) -> List[Dict]:
                 continue
 
             searchable_text = (
-                f"Title: {section['title']}\n"
-                f"Section: {section['section']}\n"
-                f"Content:\n{chunk_text}"
+                f"TITLE: {section['title']}\n"
+                f"SECTION: {section['section']}\n"
+                f"{chunk_text}"
             ).strip()
 
             all_chunks.append(
@@ -135,6 +135,7 @@ def build_embeddings(texts: List[str]) -> np.ndarray:
         texts,
         convert_to_numpy=True,
         show_progress_bar=True,
+        normalize_embeddings=True,  # QUAN TRỌNG
     )
 
     if embeddings.dtype != np.float32:
@@ -147,7 +148,7 @@ def save_faiss_index(embeddings: np.ndarray) -> None:
     VECTORSTORE_DIR.mkdir(parents=True, exist_ok=True)
 
     dimension = embeddings.shape[1]
-    index = faiss.IndexFlatL2(dimension)
+    index = faiss.IndexFlatIP(dimension)  # đổi từ L2 sang IP
     index.add(embeddings)
 
     faiss.write_index(index, str(INDEX_PATH))

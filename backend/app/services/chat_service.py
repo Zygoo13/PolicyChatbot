@@ -44,6 +44,50 @@ Source note:
 """.strip()
 
 
+KNOWN_SECTIONS = [
+    "Sprint Planning",
+    "Daily Standup",
+    "Sprint Review",
+    "Sprint Retrospective",
+    "Product Backlog Management",
+    "User Story Estimation",
+    "Definition of Done",
+    "Sprint Backlog Update",
+    "Agile Communication",
+    "Agile Documentation",
+    "Change Request Submission",
+    "Change Impact Analysis",
+    "Change Approval",
+    "Emergency Change",
+    "Change Testing",
+    "Change Deployment",
+    "Change Rollback",
+    "Change Documentation",
+    "Change Review",
+    "Change Communication",
+    "Code Review",
+    "Unit Testing",
+    "Integration Testing",
+    "Regression Testing",
+    "Bug Tracking",
+    "QA Release Approval",
+    "Performance Testing",
+    "Security Testing",
+    "Test Documentation",
+    "Quality Metrics",
+    "Incident Reporting",
+    "Incident Classification",
+    "Incident Response",
+    "Incident Escalation",
+    "Incident Resolution",
+    "Incident Communication",
+    "Incident Monitoring",
+    "Incident Postmortem",
+    "Incident Knowledge Base",
+    "Incident Prevention",
+]
+
+
 def _build_source_note(sources: list[SourceItem]) -> str:
     if not sources:
         return "Không có nguồn phù hợp."
@@ -61,6 +105,88 @@ def _build_source_note(sources: list[SourceItem]) -> str:
 
     return f"""Nguồn chính: {primary_text}
 Nguồn phụ: {secondary_text}"""
+
+
+def _normalize_question(question: str) -> str:
+    return " ".join(question.strip().split())
+
+
+def _rewrite_question_for_retrieval(question: str) -> list[str]:
+    """
+    Sinh ra một vài biến thể query retrieval để tăng khả năng lấy đúng source.
+    Không sửa nghĩa câu hỏi gốc, chỉ hỗ trợ truy xuất.
+    """
+    normalized = _normalize_question(question)
+    lower_q = normalized.lower()
+
+    candidates: list[str] = [normalized]
+
+    for section_name in KNOWN_SECTIONS:
+        if section_name.lower() in lower_q:
+            candidates.append(section_name)
+            break
+
+    if "vai trò" in lower_q and "phạm vi" in lower_q:
+        candidates.append(
+            normalized.replace("và policy này áp dụng cho phạm vi nào", "").strip()
+        )
+    elif "vai trò" in lower_q:
+        candidates.append(
+            " ".join(
+                [
+                    word
+                    for word in normalized.split()
+                    if word.lower() not in {"những", "nào", "liên", "quan", "đến"}
+                ]
+            ).strip()
+        )
+    elif "bước" in lower_q or "quy trình" in lower_q:
+        candidates.append(
+            normalized.replace("gồm những bước nào", "")
+            .replace("quy trình", "")
+            .strip()
+        )
+
+    deduped: list[str] = []
+    seen = set()
+
+    for item in candidates:
+        cleaned = _normalize_question(item)
+        if not cleaned:
+            continue
+        lowered = cleaned.lower()
+        if lowered in seen:
+            continue
+        seen.add(lowered)
+        deduped.append(cleaned)
+
+    return deduped
+
+
+def _retrieve_with_fallback(question: str, top_k: int) -> list[SourceItem]:
+    """
+    Thử retrieval nhiều lần với các query biến thể.
+    Gộp kết quả, loại trùng và trả về tối đa top_k nguồn.
+    """
+    candidate_queries = _rewrite_question_for_retrieval(question)
+
+    merged_sources: list[SourceItem] = []
+    seen_keys = set()
+
+    for query in candidate_queries:
+        sources = search_relevant_chunks(question=query, top_k=top_k)
+
+        for src in sources:
+            key = src.chunk_id or f"{src.file_name}::{src.section}::{src.title}"
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
+            merged_sources.append(src)
+
+        if len(merged_sources) >= top_k:
+            break
+
+    return merged_sources[:top_k]
 
 
 def handle_llm_only(question: str) -> ChatResponse:
@@ -81,7 +207,7 @@ def handle_rag(question: str) -> ChatResponse:
             sources=[],
         )
 
-    sources = search_relevant_chunks(question=question, top_k=2)
+    sources = _retrieve_with_fallback(question=question, top_k=2)
     context = build_context_from_sources(sources)
 
     if not context.strip():
@@ -121,7 +247,7 @@ def handle_rag_prompt(question: str) -> ChatResponse:
             sources=[],
         )
 
-    sources = search_relevant_chunks(question=question, top_k=3)
+    sources = _retrieve_with_fallback(question=question, top_k=3)
     context = build_context_from_sources(sources)
 
     if not context.strip():
@@ -159,7 +285,7 @@ Gợi ý source note:
 
 
 def answer_question(question: str, mode: str) -> ChatResponse:
-    normalized_question = question.strip()
+    normalized_question = _normalize_question(question)
     if not normalized_question:
         raise ValueError("Question must not be empty.")
 
